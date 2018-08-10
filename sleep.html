@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>TV Noise</title>
+     <link rel="stylesheet" href="sources/css/vapor.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <!-- Optional theme -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+     <!-- Latest compiled and minified JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="vapor">
+  <div class="content">
+
+          <audio id="myaudio" autoplay src="sources/sound/nymano.mp3">
+          Your browser does not support the <code>audio</code> element.
+          </audio>
+
+          <script>
+          var audio = document.getElementById("myaudio");
+          audio.volume = 0.1;
+          </script> 
+
+    <img class="statue" src="sources/img/hplovecraft.gif" />
+    
+    <div class="spinner spinner-3"></div>
+    
+    <div class="container">
+     <div class="glitch"></div>
+</div>
+
+     <div class="col sm">
+          <button type="button" class="btn" href="index.html"><a href="index.html">Canvas</a></button>
+     <div id="MyClockDisplay" class="clock"></div>
+
+
+
+          <script type="text/javascript">
+
+               function showTime(){
+                    var date = new Date();
+                    var h = date.getHours(); // 0 - 23
+                    var m = date.getMinutes(); // 0 - 59
+                    var s = date.getSeconds(); // 0 - 59
+                    var session = "AM";
+                    
+                    if(h >= 12){
+                         h = h - 12;
+                         session = "PM";
+                    }
+
+                    if(h == 0){
+                         h = 12;
+                    }
+
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+
+                    var time = h + ":" + m + ":" + s + " " + session;
+                    document.getElementById("MyClockDisplay").innerText = time;
+                    document.getElementById("MyClockDisplay").textContent = time;
+
+                    setTimeout(showTime, 1000);
+               }
+
+               showTime();
+
+          </script>
+          <!-- akhir clock -->
+          </div>
+
+
+  </div>
+</div>
+
+</body>
+</html>
